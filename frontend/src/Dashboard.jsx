@@ -38,7 +38,6 @@ const navigate = useNavigate();
           <h2>Total Sales</h2>
           <p>₹0</p>
         </div>
-       
 <div className="recent">
   <h2>Recent Companies</h2>
 
@@ -49,9 +48,13 @@ const navigate = useNavigate();
     </div>
   ))}
 </div>
+
       </div>
-       <button onClick={() => navigate("/ledger")}>
+      <button onClick={() => navigate("/ledger")}>
   Go to Ledger
+</button>
+<button onClick={() => navigate("/group")}>
+  Go to Group
 </button>
     </div>
   );

@@ -48,9 +48,14 @@ setPhone("");
 setEmail("");
 };
 const fetchCompanies = async () => {
+  try{
   const res = await fetch("http://localhost:5000/api/companies");
   const data = await res.json();
   setCompanies(data);
+   } catch (err) {
+    console.log("Error fetching companies:", err);
+    setCompanies([]);
+  }
 };
 useEffect(() => {
   fetchCompanies();
@@ -60,7 +65,7 @@ const deleteCompany = async (id) => {
     method: "DELETE",
   });
 
-  fetchCompanies(); // refresh list
+  fetchCompanies(); 
 };
 
   return (

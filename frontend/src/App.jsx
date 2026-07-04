@@ -4,6 +4,7 @@ import './App.css'
 import Company from "./Company";
 import Dashboard from "./Dashboard";
 import Ledger from "./Ledger";
+import Group from "./Group";
 function App() {
   return (
     <BrowserRouter>
@@ -11,8 +12,10 @@ function App() {
         <Route path="/" element={<Company />} />
        
         <Route path="/dashboard" element={<Dashboard />} />
-        
+
         <Route path="/ledger" element={<Ledger />} />
+
+        <Route path="/group" element={<Group />} />
       </Routes>
     </BrowserRouter>
   );

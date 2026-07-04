@@ -68,6 +68,9 @@ const navigate = useNavigate();
 <button onClick={() => navigate("/billing")}>
   Go to Billing
 </button>
+<button onClick={() => navigate("/reports")}>
+  Go to Reports
+</button>
     </div>
   );
 }

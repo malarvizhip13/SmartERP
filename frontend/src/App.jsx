@@ -9,6 +9,7 @@ import Stock from "./Stock";
 import PurchaseVoucher from "./PurchaseVoucher";
 import SalesVoucher from "./SalesVoucher";
 import Billing from "./Billing";
+import Reports from "./Reports";
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +29,8 @@ function App() {
         <Route path="/sales" element={<SalesVoucher />} />
 
         <Route path="/billing" element={<Billing />} />
+
+        <Route path="/reports" element={<Reports />} />
       </Routes>
     </BrowserRouter>
   );

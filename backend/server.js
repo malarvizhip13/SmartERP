@@ -16,6 +16,7 @@ const stockRoutes = require("./routes/stockRoutes");
 const purchaseRoutes = require("./routes/purchaseRoutes");
 const salesRoutes = require("./routes/salesRoutes");
 const billRoutes = require("./routes/billRoutes");
+const reportRoutes = require("./routes/reportRoutes");
 
 app.use("/api/auth", authRoutes);
 app.use("/api/companies", companyRoutes);
@@ -25,6 +26,7 @@ app.use("/api/stock", stockRoutes);
 app.use("/api/purchase", purchaseRoutes);
 app.use("/api/sales", salesRoutes);
 app.use("/api/bills", billRoutes);
+app.use("/api/reports", reportRoutes);
 
 app.get("/", (req, res) => {
   res.json({ message: "SmartERP Backend Running 🚀" });

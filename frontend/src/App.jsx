@@ -10,9 +10,12 @@ import PurchaseVoucher from "./PurchaseVoucher";
 import SalesVoucher from "./SalesVoucher";
 import Billing from "./Billing";
 import Reports from "./Reports";
+import KeyboardShortcuts from "./KeyboardShortcuts";
 function App() {
   return (
+    
     <BrowserRouter>
+     <KeyboardShortcuts />
       <Routes>
         <Route path="/" element={<Company />} />
        

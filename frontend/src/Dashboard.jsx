@@ -56,6 +56,9 @@ const navigate = useNavigate();
 <button onClick={() => navigate("/group")}>
   Go to Group
 </button>
+<button onClick={() => navigate("/stock")}>
+  Go to Stock
+</button>
     </div>
   );
 }

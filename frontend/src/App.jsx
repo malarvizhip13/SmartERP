@@ -7,6 +7,7 @@ import Ledger from "./Ledger";
 import Group from "./Group";
 import Stock from "./Stock";
 import PurchaseVoucher from "./PurchaseVoucher";
+import SalesVoucher from "./SalesVoucher";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +23,8 @@ function App() {
         <Route path="/stock" element={<Stock />} />
 
         <Route path="/purchase" element={<PurchaseVoucher />} />
+
+        <Route path="/sales" element={<SalesVoucher />} />
       </Routes>
     </BrowserRouter>
   );

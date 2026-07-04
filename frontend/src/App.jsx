@@ -3,7 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Company from "./Company";
 import Dashboard from "./Dashboard";
-
+import Ledger from "./Ledger";
 function App() {
   return (
     <BrowserRouter>
@@ -11,6 +11,8 @@ function App() {
         <Route path="/" element={<Company />} />
        
         <Route path="/dashboard" element={<Dashboard />} />
+        
+        <Route path="/ledger" element={<Ledger />} />
       </Routes>
     </BrowserRouter>
   );

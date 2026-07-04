@@ -1,8 +1,9 @@
 import "./Dashboard.css";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Dashboard() {
     const [companies, setCompanies] = useState([]);
-
+const navigate = useNavigate();
   const fetchCompanies = async () => {
     const res = await fetch("http://localhost:5000/api/companies");
     const data = await res.json();
@@ -37,6 +38,7 @@ function Dashboard() {
           <h2>Total Sales</h2>
           <p>₹0</p>
         </div>
+       
 <div className="recent">
   <h2>Recent Companies</h2>
 
@@ -48,6 +50,9 @@ function Dashboard() {
   ))}
 </div>
       </div>
+       <button onClick={() => navigate("/ledger")}>
+  Go to Ledger
+</button>
     </div>
   );
 }

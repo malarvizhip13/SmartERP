@@ -13,6 +13,7 @@ const companyRoutes = require("./routes/companyRoutes");
 const ledgerRoutes = require("./routes/ledgerRoutes");
 const groupRoutes = require("./routes/groupRoutes");
 const stockRoutes = require("./routes/stockRoutes");
+const purchaseRoutes = require("./routes/purchaseRoutes");
 
 // Routes
 app.use("/api/auth", authRoutes);
@@ -20,6 +21,7 @@ app.use("/api/companies", companyRoutes);
 app.use("/api/ledgers", ledgerRoutes);
 app.use("/api/groups", groupRoutes);
 app.use("/api/stock", stockRoutes);
+app.use("/api/purchase", purchaseRoutes);
 
 // Test routes
 app.get("/", (req, res) => {

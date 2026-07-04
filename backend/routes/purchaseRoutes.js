@@ -5,14 +5,14 @@ const supabase = require("../supabase");
 
 router.post("/", async (req, res) => {
   try {
-    const { item_name, category, quantity, price } = req.body;
+    const { supplier_name, item_name, quantity, price } = req.body;
 
     const { data, error } = await supabase
-      .from("stock")
+      .from("purchase_vouchers")
       .insert([
         {
+          supplier_name,
           item_name,
-          category,
           quantity,
           price,
         },
@@ -29,11 +29,11 @@ router.post("/", async (req, res) => {
   }
 });
 
-
+// 📄 Get Purchases
 router.get("/", async (req, res) => {
   try {
     const { data, error } = await supabase
-      .from("stock")
+      .from("purchase_vouchers")
       .select("*")
       .order("created_at", { ascending: false });
 

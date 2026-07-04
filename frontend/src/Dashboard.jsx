@@ -59,6 +59,9 @@ const navigate = useNavigate();
 <button onClick={() => navigate("/stock")}>
   Go to Stock
 </button>
+<button onClick={() => navigate("/purchase")}>
+  Go to Purchase
+</button>
     </div>
   );
 }

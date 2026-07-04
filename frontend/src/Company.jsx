@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 import './Company.css';
 function Company() {
+  const navigate = useNavigate();
   const [companyName, setCompanyName] = useState("");
   const [address, setAddress] = useState("");
   const [companies, setCompanies] = useState([]);
@@ -27,11 +28,15 @@ const saveCompany = async (e) => {
       state,
       phone,
       email,
+      
     }),
   });
   const data = await res.json();
 console.log(data);
 
+if (data) {
+  navigate("/dashboard");
+}
 fetchCompanies();
 
 setCompanyName("");
@@ -50,7 +55,13 @@ const fetchCompanies = async () => {
 useEffect(() => {
   fetchCompanies();
 }, []);
+const deleteCompany = async (id) => {
+  await fetch(`http://localhost:5000/api/companies/${id}`, {
+    method: "DELETE",
+  });
 
+  fetchCompanies(); // refresh list
+};
 
   return (
     <div>
@@ -137,9 +148,14 @@ useEffect(() => {
       <p>State: {company.state}</p>
       <p>Phone: {company.phone}</p>
       <p>Email: {company.email}</p>
+      <button onClick={() => deleteCompany(company.id)}>
+  Delete
+</button>
     </div>
+    
   ))
 )}
+
     </div>
   );
 }

@@ -10,9 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const authRoutes = require("./routes/authRoutes");
+const companyRoutes = require("./routes/companyRoutes");
 
 app.use("/api/auth", authRoutes);
-
+app.use("/api/companies", companyRoutes);
 
 app.get("/", (req, res) => {
   res.json({
